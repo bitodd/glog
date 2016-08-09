@@ -3,14 +3,18 @@
 
 #include "stdafx.h"
 
-#include "src\windows\glog\logging.h"
+#include "test.h"
+
+
+#include "string"
+#include "iostream"
+
 
 int main(int argc, char* argv[])
 {
 	//Initialize Google's logging library
-	google::InitGoogleLogging(argv[0]);
-	google::SetLogDestination(0, "./error.log");
-	LOG(INFO) << "hello glog!" ;
+	Test::GetInstance()->initGlog(argv[0]);
+	std::cout << "end~" << std::endl;
 	getchar();
     return 0;
 }
