@@ -12,23 +12,20 @@
 #ifndef TEST_h__
 #define TEST_h__
 
-#include "src\windows\glog\logging.h"
-
 class Test
 {
 public:
-	~Test();
-
-	static Test* GetInstance() 
-	{
-		if (instance == nullptr)
-			instance = new Test;
-		return instance;
-	}
-	void initGlog(const char* p);
+  static Test* GetInstance() 
+  {
+    if (instance == nullptr)
+      instance = new Test;
+    return instance;
+  }
+  void initGlog(const char* p);
 private:
-	static Test* instance;
-	//Test();
+  static Test* instance;
+  Test();
+  ~Test();
 };
 
 #endif // TEST_h__
